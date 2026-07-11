@@ -1,5 +1,6 @@
-# Ermias Ventures Website v3
+# Ermias Ventures Website — Connected Version
 
-Upload all files in this folder directly to the root of the GitHub repository.
+This version connects the website to the live Revenue Guard Pro and Online Ordering applications.
 
-Important: `index.html`, `styles.css`, and `script.js` must remain in the same folder.
+- Revenue Guard Pro: homepage product button and product page live-demo button
+- Online Ordering: homepage product button and product page live-demo button

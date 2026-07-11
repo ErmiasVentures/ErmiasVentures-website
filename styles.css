@@ -29,3 +29,113 @@ html,body{max-width:100%;overflow-x:hidden}
 @media (max-width:620px){.hero{background:radial-gradient(circle at 90% 60%,rgba(39,100,216,.25),transparent 35%),linear-gradient(135deg,var(--navy),#102b4d)}.hero-grid{padding-top:58px}.hero h1{font-size:clamp(2.35rem,12vw,3.15rem);line-height:1.02;overflow-wrap:anywhere}.hero-copy>p{font-size:1.02rem}.actions{display:grid}.actions .btn{width:100%}.hero-visual{min-height:365px}.dashboard-card{top:28px;padding:18px;border-radius:20px}.phone-card{left:4px;bottom:4px}.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.kpis div{padding:10px 7px}.kpis strong{font-size:.98rem}.kpis small{font-size:.66rem}.chart{height:105px;padding:12px;gap:6px}.trust-grid{padding:20px 0}.section-head h2{font-size:2.1rem}.cta-box h2{font-size:2rem}}
 .service-card,.product-card,.info-card,.process-card{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease,box-shadow .22s ease}
 .service-card.visible,.product-card.visible,.info-card.visible,.process-card.visible{opacity:1;transform:none}
+
+
+/* Restaurant directory */
+.ordering-hero{background:radial-gradient(circle at 85% 25%,rgba(238,177,82,.20),transparent 28%),linear-gradient(135deg,#3d1e12,#7a4324)}
+.restaurant-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.restaurant-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 16px 42px rgba(20,43,73,.08);display:flex;flex-direction:column;min-width:0}
+.restaurant-card.featured{grid-column:span 1}
+.restaurant-photo{min-height:210px;display:flex;align-items:flex-end;padding:22px;color:#fff;font-weight:900;letter-spacing:.03em}
+.restaurant-photo-ethiopian{background:linear-gradient(135deg,rgba(39,17,8,.2),rgba(39,17,8,.62)),radial-gradient(circle at 28% 28%,#e5bd69 0 8%,transparent 9%),radial-gradient(circle at 65% 42%,#a9462f 0 12%,transparent 13%),radial-gradient(circle at 46% 72%,#6a8d3a 0 14%,transparent 15%),linear-gradient(135deg,#b66a37,#4d2517)}
+.restaurant-content{padding:26px;display:flex;flex-direction:column;flex:1}
+.restaurant-content h3{font-size:1.42rem;line-height:1.25;margin:12px 0 8px}
+.restaurant-content p{color:var(--muted);margin:0 0 18px}
+.restaurant-status{align-self:flex-start;border-radius:999px;padding:6px 10px;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.restaurant-status.live{background:#e4f8ee;color:#168754}
+.restaurant-status.soon{background:#eef2f7;color:#687588}
+.restaurant-meta{display:flex;gap:10px;flex-wrap:wrap;margin:auto 0 20px}
+.restaurant-meta span{font-size:.78rem;background:#f2f5f9;border-radius:999px;padding:7px 10px;color:#536174}
+.restaurant-placeholder{min-height:210px;background:linear-gradient(145deg,#f1f4f8,#e4eaf2);display:grid;place-items:center;font-size:4rem;color:#9aa7b8;font-weight:300}
+.full-btn{width:100%}
+.secondary-dark{background:var(--navy);color:#fff}
+.platform-flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.platform-flow span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-weight:800;text-align:center}
+.platform-flow b{color:var(--gold)}
+@media(max-width:900px){.restaurant-grid{grid-template-columns:1fr 1fr}.restaurant-card.featured{grid-column:1/-1}}
+@media(max-width:620px){.restaurant-grid{grid-template-columns:1fr}.restaurant-card.featured{grid-column:auto}.restaurant-photo,.restaurant-placeholder{min-height:180px}}
+
+
+/* Demo links and launch pages */
+.card-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:auto;padding-top:8px}.card-actions a{font-weight:800;text-decoration:none;color:var(--navy)}.card-actions .demo-link{color:var(--teal)}.demo-panel-btn{margin-top:24px}.demo-launch-section{min-height:72vh;display:grid;place-items:center;padding:80px 20px;background:radial-gradient(circle at top right,rgba(29,194,174,.16),transparent 35%),linear-gradient(135deg,#f5f8fb,#eef4f7)}.demo-launch-card{max-width:760px;margin:auto;background:white;border:1px solid rgba(12,32,53,.08);border-radius:28px;padding:56px;box-shadow:0 24px 70px rgba(12,32,53,.14);text-align:center}.demo-launch-card h1{font-size:clamp(2.2rem,5vw,4rem);margin:14px 0 18px}.demo-launch-card>p{font-size:1.15rem;line-height:1.75;color:#566474;max-width:640px;margin:0 auto}.demo-notice{display:flex;flex-direction:column;gap:6px;background:#fff7df;border:1px solid #f1d27a;border-radius:16px;padding:18px;margin:30px 0;color:#6c5311}.demo-actions{justify-content:center}.new-tab-note{display:block;margin-top:16px;color:#6d7885}@media(max-width:650px){.demo-launch-card{padding:34px 22px}.card-actions{gap:10px}.card-actions a{width:100%}}
+
+
+/* Managed vending page */
+.vending-hero{
+  background:
+    radial-gradient(circle at 82% 28%,rgba(216,163,60,.22),transparent 30%),
+    linear-gradient(135deg,#08192e,#13365c 72%,#1d4a71);
+}
+.vending-machine-panel{text-align:center}
+.vending-machine{
+  width:min(280px,85%);
+  margin:0 auto 28px;
+  padding:16px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#152a43,#07172d);
+  box-shadow:0 24px 55px rgba(7,23,45,.28);
+}
+.machine-top{
+  color:#f3c665;
+  font-size:.82rem;
+  font-weight:900;
+  letter-spacing:.18em;
+  padding:4px 0 14px;
+}
+.machine-window{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+  padding:14px;
+  border-radius:13px;
+  background:linear-gradient(145deg,#dfe9f4,#f8fbff);
+  border:5px solid #263b54;
+}
+.machine-window span{
+  display:grid;
+  place-items:center;
+  min-height:54px;
+  border-radius:9px;
+  background:#fff;
+  box-shadow:inset 0 -4px 8px rgba(7,23,45,.06);
+  font-size:1.75rem;
+}
+.machine-controls{
+  display:grid;
+  grid-template-columns:1fr 52px;
+  gap:10px;
+  margin:14px 0;
+}
+.machine-controls .screen{
+  display:grid;
+  place-items:center;
+  min-height:44px;
+  padding:8px;
+  color:#b9f5dc;
+  background:#0b1d2e;
+  border:1px solid #2c4a64;
+  border-radius:8px;
+  font-size:.72rem;
+  font-weight:800;
+}
+.machine-controls .reader{
+  display:grid;
+  place-items:center;
+  border-radius:8px;
+  background:#d8a33c;
+}
+.delivery-door{
+  width:62%;
+  height:30px;
+  margin:auto;
+  border-radius:6px;
+  background:#030b14;
+  border:2px solid #33475e;
+}
+.vending-location-grid .info-card{min-height:215px}
+.vending-icon{font-size:2.15rem;margin-bottom:14px}
+.vending-cta{background:linear-gradient(135deg,#174f3c,#0f6a4b)}
+@media(max-width:620px){
+  .vending-machine{width:min(270px,100%)}
+  .vending-location-grid .info-card{min-height:auto}
+}
