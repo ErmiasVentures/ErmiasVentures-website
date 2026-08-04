@@ -1,1 +1,174 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Online Ordering Demo | Ermias Ventures LLC</title><link rel="stylesheet" href="styles.css"></head><body><header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">EV</span><span><strong>ERMIAS VENTURES</strong><small>SMART SOLUTIONS</small></span></a><nav class="main-nav"><a href="index.html">Home</a><a href="online-ordering.html">Product Details</a><a class="nav-cta" href="contact.html">Free Consultation</a></nav></div></header><main><section class="demo-launch-section"><div class="container"><div class="demo-launch-card"><span class="eyebrow">LIVE PRODUCT DEMO</span><h1>Experience the Online Ordering System</h1><p>Browse a sample menu, build a cart, and submit a test order to see the complete customer experience.</p><div class="demo-notice"><strong>Demo environment</strong><span>This system is for demonstration and testing. Do not enter confidential or sensitive information.</span></div><div class="actions demo-actions"><a class="btn primary" href="https://script.google.com/macros/s/AKfycbz7ng7EsLJKHDiB-JJ6j7qH2r5Lww0upQNwEdex_q4wbd_JuZ4xjJeOYCoqoZGUGnkQ/exec" target="_blank" rel="noopener noreferrer">Open Online Ordering Demo</a><a class="btn outline" href="online-ordering.html">Back to Product Page</a></div><small class="new-tab-note">The demo opens in a new tab.</small></div></div></section></main><footer class="site-footer"><div class="container footer-bottom"><span>© <span data-year></span> Ermias Ventures LLC</span><span>Columbus, Ohio · (614) 354-2520</span></div></footer><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Try the Ermias Ventures restaurant online ordering and kitchen display demo."
+  >
+
+  <title>Online Ordering Demo | Ermias Ventures</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 30px 20px;
+      font-family: Arial, sans-serif;
+      color: #102a43;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(16, 42, 67, 0.96),
+          rgba(15, 118, 110, 0.9)
+        );
+    }
+
+    .demo-card {
+      width: min(100%, 760px);
+      padding: 55px 40px;
+      text-align: center;
+      background: #ffffff;
+      border-radius: 26px;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .demo-label {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #f97360;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.08;
+    }
+
+    .intro {
+      max-width: 620px;
+      margin: 0 auto 24px;
+      color: #627d98;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .notice {
+      margin: 28px 0;
+      padding: 16px;
+      border: 1px solid #fed7aa;
+      border-radius: 14px;
+      background: #fff7ed;
+      color: #9a3412;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .primary {
+      background: #0f766e;
+      color: #ffffff;
+    }
+
+    .secondary {
+      background: #eaf0f5;
+      color: #102a43;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .help {
+      margin-top: 22px;
+      color: #829ab1;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      .demo-card {
+        padding: 40px 22px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="demo-card">
+
+    <span class="demo-label">
+      INTERACTIVE RESTAURANT DEMO
+    </span>
+
+    <h1>
+      Experience the Online Ordering System
+    </h1>
+
+    <p class="intro">
+      Browse a sample menu, customize food, add kids meals and beverages,
+      submit a test order and watch it appear on the kitchen display.
+    </p>
+
+    <div class="notice">
+      Demo environment only. No food will be prepared and no payment will
+      be collected.
+    </div>
+
+    <div class="buttons">
+
+      <a class="button primary" href="/demo">
+        Open Online Ordering Demo
+      </a>
+
+      <a class="button secondary" href="online-ordering.html">
+        Back to Product Page
+      </a>
+
+    </div>
+
+    <p class="help">
+      The demo opens on ErmiasVentures.com without showing the long Google
+      Apps Script address.
+    </p>
+
+  </main>
+
+</body>
+</html>
