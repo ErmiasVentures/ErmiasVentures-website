@@ -95,6 +95,14 @@
       border-radius: 12px;
       text-decoration: none;
       font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(16, 42, 67, 0.18);
     }
 
     .primary {
@@ -105,16 +113,6 @@
     .secondary {
       background: #eaf0f5;
       color: #102a43;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    .help {
-      margin-top: 22px;
-      color: #829ab1;
-      font-size: 13px;
     }
 
     @media (max-width: 600px) {
@@ -157,16 +155,11 @@
         Open Online Ordering Demo
       </a>
 
-      <a class="button secondary" href="online-ordering.html">
+      <a class="button secondary" href="/online-ordering">
         Back to Product Page
       </a>
 
     </div>
-
-    <p class="help">
-      The demo opens on ErmiasVentures.com without showing the long Google
-      Apps Script address.
-    </p>
 
   </main>
 
