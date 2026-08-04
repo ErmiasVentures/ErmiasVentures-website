@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Try the Ermias Ventures restaurant online ordering demo."
+  >
+
+  <title>Restaurant Online Ordering Demo | Ermias Ventures</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #fffaf2;
+      font-family: Arial, sans-serif;
+    }
+
+    .demo-header {
+      background: #102a43;
+      color: #ffffff;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .demo-header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .demo-header a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .demo-notice {
+      padding: 10px 20px;
+      text-align: center;
+      background: #fff7ed;
+      color: #9a3412;
+      border-bottom: 1px solid #fed7aa;
+      font-weight: 700;
+    }
+
+    .demo-frame {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 108px);
+      min-height: 850px;
+      border: 0;
+      background: #ffffff;
+    }
+
+    @media (max-width: 600px) {
+      .demo-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .demo-frame {
+        height: calc(100vh - 140px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="demo-header">
+    <h1>Ermias Ventures Restaurant Demo</h1>
+
+    <a href="online-ordering-demo.html">
+      Return to Demo Options
+    </a>
+  </header>
+
+  <div class="demo-notice">
+    Interactive demo only — no food will be prepared and no payment will be collected.
+  </div>
+
+  <iframe
+    class="demo-frame"
+    src="https://script.google.com/macros/s/AKfycbxRy_2eCi7K-XRuuFsAfn8CEVg_ru0oigBVmhWxbFIAvc6eRxMMRnilK6lksbc5YrzJ9w/exec?page=order"
+    title="Ermias Ventures Online Ordering Demo"
+    allow="clipboard-write"
+  ></iframe>
+
+</body>
+</html>
