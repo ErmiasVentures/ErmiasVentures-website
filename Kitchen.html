@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="Ermias Ventures restaurant kitchen display demo."
+  >
+
+  <title>Kitchen Display Demo | Ermias Ventures</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      min-height: 100%;
+      background: #eaf0f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .demo-header {
+      background: #102a43;
+      color: #ffffff;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .demo-header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .demo-header a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .demo-notice {
+      padding: 10px 20px;
+      text-align: center;
+      background: #fff7ed;
+      color: #9a3412;
+      border-bottom: 1px solid #fed7aa;
+      font-weight: 700;
+    }
+
+    .demo-frame {
+      display: block;
+      width: 100%;
+      height: calc(100vh - 108px);
+      min-height: 800px;
+      border: 0;
+      background: #eaf0f5;
+    }
+
+    @media (max-width: 650px) {
+      .demo-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .demo-frame {
+        height: calc(100vh - 145px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="demo-header">
+    <h1>Ermias Ventures Kitchen Display Demo</h1>
+
+    <div class="header-links">
+      <a href="/demo">Open Ordering Page</a>
+      <a href="/online-ordering-demo">Return to Demo Options</a>
+    </div>
+  </header>
+
+  <div class="demo-notice">
+    Interactive demo only — all displayed orders are test orders.
+  </div>
+
+  <iframe
+    class="demo-frame"
+    src="https://script.google.com/macros/s/AKfycbxRy_2eCi7K-XRuuFsAfn8CEVg_ru0oigBVmhWxbFIAvc6eRxMMRnilK6lksbc5YrzJ9w/exec?page=kitchen"
+    title="Ermias Ventures Kitchen Display Demo"
+  ></iframe>
+
+</body>
+</html>
