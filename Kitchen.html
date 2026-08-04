@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Try the Ermias Ventures restaurant kitchen display demo."
+    content="Ermias Ventures restaurant kitchen display demo."
   >
 
   <title>Kitchen Display Demo | Ermias Ventures</title>
@@ -25,114 +25,63 @@
       margin: 0;
       width: 100%;
       min-height: 100%;
-      overflow: hidden;
       background: #eaf0f5;
       font-family: Arial, sans-serif;
     }
 
-    .site-header {
-      min-height: 64px;
-      padding: 12px 20px;
+    .demo-header {
+      background: #102a43;
+      color: #ffffff;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      background: #102a43;
-      color: #ffffff;
+      gap: 15px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 12px;
-      background: #f97360;
-      font-size: 22px;
-    }
-
-    .brand h1 {
+    .demo-header h1 {
       margin: 0;
-      font-size: 19px;
-    }
-
-    .brand p {
-      margin: 3px 0 0;
-      color: #cbd5e1;
-      font-size: 12px;
+      font-size: 20px;
     }
 
     .header-links {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
-    .header-link {
-      display: inline-block;
-      padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 10px;
+    .demo-header a {
       color: #ffffff;
       text-decoration: none;
-      font-size: 14px;
       font-weight: 700;
-    }
-
-    .header-link.primary {
-      border-color: #0f766e;
-      background: #0f766e;
     }
 
     .demo-notice {
-      min-height: 42px;
-      padding: 11px 20px;
+      padding: 10px 20px;
       text-align: center;
-      border-bottom: 1px solid #fed7aa;
       background: #fff7ed;
       color: #9a3412;
-      font-size: 14px;
+      border-bottom: 1px solid #fed7aa;
       font-weight: 700;
     }
 
-    .kitchen-frame {
+    .demo-frame {
       display: block;
       width: 100%;
-      height: calc(100vh - 106px);
+      height: calc(100vh - 108px);
+      min-height: 800px;
       border: 0;
       background: #eaf0f5;
     }
 
-    @media (max-width: 700px) {
-      html,
-      body {
-        overflow: auto;
-      }
-
-      .site-header {
+    @media (max-width: 650px) {
+      .demo-header {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .header-links {
-        width: 100%;
-      }
-
-      .header-link {
-        flex: 1;
-        text-align: center;
-      }
-
-      .kitchen-frame {
-        height: calc(100vh - 165px);
-        min-height: 750px;
+      .demo-frame {
+        height: calc(100vh - 145px);
       }
     }
   </style>
@@ -140,33 +89,18 @@
 
 <body>
 
-  <header class="site-header">
+  <header class="demo-header">
 
-    <div class="brand">
-
-      <div class="brand-icon">👨‍🍳</div>
-
-      <div>
-        <h1>Ermias Ventures Kitchen Display Demo</h1>
-        <p>Live restaurant order management demonstration</p>
-      </div>
-
-    </div>
+    <h1>Ermias Ventures Kitchen Display Demo</h1>
 
     <div class="header-links">
 
-      <a
-        class="header-link primary"
-        href="/demo"
-      >
+      <a href="/demo">
         Open Ordering Page
       </a>
 
-      <a
-        class="header-link"
-        href="/online-ordering-demo"
-      >
-        Demo Home
+      <a href="/online-ordering-demo">
+        Return to Demo Options
       </a>
 
     </div>
@@ -174,14 +108,13 @@
   </header>
 
   <div class="demo-notice">
-    Interactive demonstration only — all displayed orders are test orders.
+    Interactive demo only — all displayed orders are test orders.
   </div>
 
   <iframe
-    class="kitchen-frame"
+    class="demo-frame"
     src="https://script.google.com/macros/s/AKfycbxRy_2eCi7K-XRuuFsAfn8CEVg_ru0oigBVmhWxbFIAvc6eRxMMRnilK6lksbc5YrzJ9w/exec?page=kitchen"
-    title="Ermias Ventures Kitchen Display"
-    loading="eager"
+    title="Ermias Ventures Kitchen Display Demo"
   ></iframe>
 
 </body>
