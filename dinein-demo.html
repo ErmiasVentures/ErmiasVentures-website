@@ -3,211 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dine-in QR ordering demo from Ermias Ventures LLC.">
+  <meta name="description" content="Interactive dine-in QR ordering demo from Ermias Ventures LLC.">
   <title>Dine-In Ordering Demo | Ermias Ventures LLC</title>
   <style>
     :root{
-      --navy:#10243e;
-      --blue:#1f5f99;
-      --blue-dark:#174b79;
-      --gold:#d9a441;
-      --cream:#f7f4ed;
-      --white:#fff;
-      --text:#1d2935;
-      --muted:#627080;
-      --border:#dfe5eb;
-      --success:#1e7a52;
+      --navy:#10243e; --blue:#1f5f99; --blue-dark:#174b79; --gold:#d9a441;
+      --cream:#f7f4ed; --white:#fff; --text:#1d2935; --muted:#627080;
+      --border:#dfe5eb; --success:#1e7a52; --danger:#a33a3a;
       --shadow:0 16px 40px rgba(16,36,62,.12);
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:var(--cream);
-      color:var(--text);
-      line-height:1.5;
-    }
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--text);line-height:1.5}
     .container{width:min(1100px,calc(100% - 28px));margin:0 auto}
-    header{
-      background:var(--navy);
-      color:var(--white);
-      position:sticky;
-      top:0;
-      z-index:10;
-    }
-    .nav{
-      min-height:70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-    }
-    .brand{
-      text-decoration:none;
-      color:var(--white);
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-    }
-    .mark{
-      width:42px;
-      height:42px;
-      border-radius:10px;
-      background:var(--gold);
-      color:var(--navy);
-      display:grid;
-      place-items:center;
-    }
-    .back{
-      color:var(--white);
-      text-decoration:none;
-      font-weight:700;
-    }
-    .hero{
-      padding:48px 0 26px;
-      text-align:center;
-    }
-    .table-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      background:var(--white);
-      border:1px solid var(--border);
-      border-radius:999px;
-      padding:8px 14px;
-      color:var(--blue);
-      font-weight:800;
-      box-shadow:0 6px 18px rgba(16,36,62,.08);
-    }
-    h1{
-      margin:18px 0 10px;
-      color:var(--navy);
-      font-size:clamp(36px,6vw,58px);
-      line-height:1.05;
-    }
-    .hero p{
-      margin:0 auto;
-      max-width:680px;
-      color:var(--muted);
-      font-size:18px;
-    }
-    .menu{
-      padding:26px 0 76px;
-    }
-    .menu-head{
-      display:flex;
-      justify-content:space-between;
-      align-items:end;
-      gap:16px;
-      margin-bottom:20px;
-    }
-    .menu-head h2{
-      margin:0;
-      color:var(--navy);
-      font-size:30px;
-    }
-    .menu-head span{
-      color:var(--muted);
-      font-size:14px;
-    }
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:20px;
-    }
-    .card{
-      background:var(--white);
-      border:1px solid var(--border);
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-    }
-    .image{
-      height:190px;
-      display:grid;
-      place-items:center;
-      font-size:76px;
-      background:linear-gradient(135deg,#f1e4c8,#eef5fb);
-    }
-    .card-body{
-      padding:20px;
-      display:flex;
-      flex-direction:column;
-      flex:1;
-    }
-    .card h3{
-      margin:0;
-      color:var(--navy);
-      font-size:22px;
-    }
-    .card p{
-      margin:8px 0 18px;
-      color:var(--muted);
-      flex:1;
-    }
-    .card-foot{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    .price{
-      color:var(--navy);
-      font-size:20px;
-      font-weight:900;
-    }
-    button{
-      border:0;
-      border-radius:10px;
-      min-height:44px;
-      padding:0 18px;
-      background:var(--blue);
-      color:var(--white);
-      font-weight:800;
-      cursor:pointer;
-    }
+    header{background:var(--navy);color:var(--white);position:sticky;top:0;z-index:10}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--white);font-weight:800}
+    .mark{width:42px;height:42px;border-radius:10px;background:var(--gold);color:var(--navy);display:grid;place-items:center}
+    .back{color:var(--white);text-decoration:none;font-weight:700}
+    .hero{padding:42px 0 24px;text-align:center}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--border);border-radius:999px;padding:8px 14px;color:var(--blue);font-weight:800}
+    h1{margin:18px 0 10px;color:var(--navy);font-size:clamp(36px,6vw,58px);line-height:1.05}
+    .hero p{margin:0 auto;max-width:680px;color:var(--muted);font-size:18px}
+    .layout{display:grid;grid-template-columns:1fr 330px;gap:24px;padding:24px 0 72px}
+    .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{background:var(--white);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+    .image{height:170px;display:grid;place-items:center;font-size:68px;background:linear-gradient(135deg,#f1e4c8,#eef5fb)}
+    .card-body{padding:18px}
+    .card h3{margin:0;color:var(--navy);font-size:21px}
+    .card p{margin:7px 0 16px;color:var(--muted)}
+    .card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .price{font-size:19px;font-weight:900;color:var(--navy)}
+    button{border:0;border-radius:10px;min-height:42px;padding:0 16px;background:var(--blue);color:var(--white);font-weight:800;cursor:pointer}
     button:hover{background:var(--blue-dark)}
-    .cart{
-      position:fixed;
-      right:22px;
-      bottom:22px;
-      background:var(--gold);
-      color:var(--navy);
-      text-decoration:none;
-      padding:15px 20px;
-      border-radius:14px;
-      font-weight:900;
-      box-shadow:var(--shadow);
-    }
-    .notice{
-      margin-top:26px;
-      padding:18px;
-      border:1px solid #cfe5da;
-      background:#eef8f3;
-      border-radius:14px;
-      color:var(--success);
-      font-weight:700;
-      text-align:center;
-    }
-    @media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:600px){
-      .grid{grid-template-columns:1fr}
-      .menu-head{align-items:flex-start;flex-direction:column}
-      .image{height:165px}
-      .cart{left:14px;right:14px;text-align:center}
-    }
+    .cart-panel{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--shadow);height:max-content;position:sticky;top:94px}
+    .cart-panel h2{margin:0 0 14px;color:var(--navy)}
+    .field{display:grid;gap:6px;margin-bottom:14px}
+    label{font-size:13px;font-weight:800;color:var(--navy)}
+    input, textarea{width:100%;border:1px solid var(--border);border-radius:10px;padding:11px 12px;font:inherit}
+    textarea{min-height:76px;resize:vertical}
+    .cart-items{display:grid;gap:10px;margin:16px 0}
+    .cart-row{display:flex;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+    .empty{color:var(--muted);font-size:14px}
+    .total{display:flex;justify-content:space-between;font-weight:900;color:var(--navy);margin:14px 0}
+    .send{width:100%;background:var(--gold);color:var(--navy);min-height:50px}
+    .send:hover{filter:brightness(.96)}
+    .message{margin-top:12px;padding:12px;border-radius:10px;display:none;font-weight:700}
+    .message.success{display:block;background:#eaf7f0;color:var(--success)}
+    .message.error{display:block;background:#fdeeee;color:var(--danger)}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.cart-panel{position:static}.menu-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
 <header>
   <div class="container nav">
-    <a class="brand" href="/">
-      <span class="mark">EV</span>
-      <span>ERMIAS VENTURES</span>
-    </a>
+    <a class="brand" href="/"><span class="mark">EV</span><span>ERMIAS VENTURES</span></a>
     <a class="back" href="/restaurant-online-ordering/">Back to Sales Page</a>
   </div>
 </header>
@@ -215,79 +64,157 @@
 <main>
   <section class="hero">
     <div class="container">
-      <span class="table-pill">📱 Dine-In Demo · Table 6</span>
+      <span class="pill">📱 Dine-In Demo</span>
       <h1>Order From Your Table</h1>
-      <p>
-        Scan the restaurant’s QR code, choose your food, and send the order directly
-        to the kitchen without waiting for a paper menu.
-      </p>
+      <p>Add sample items, enter a table number, and send the order to the kitchen demo.</p>
     </div>
   </section>
 
-  <section class="menu">
-    <div class="container">
-      <div class="menu-head">
-        <h2>Sample Menu</h2>
-        <span>Demo only — no payment will be processed</span>
+  <div class="container layout">
+    <section class="menu-grid" aria-label="Sample menu">
+      <article class="card">
+        <div class="image">🍛</div>
+        <div class="card-body">
+          <h3>House Combination</h3>
+          <p>Sample combination plate with entrée choices and fresh sides.</p>
+          <div class="card-foot"><span class="price">$18.99</span><button onclick="addItem('House Combination',18.99)">Add</button></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="image">🍗</div>
+        <div class="card-body">
+          <h3>Grilled Chicken Plate</h3>
+          <p>Seasoned grilled chicken with rice, vegetables, and house sauce.</p>
+          <div class="card-foot"><span class="price">$16.49</span><button onclick="addItem('Grilled Chicken Plate',16.49)">Add</button></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="image">🥗</div>
+        <div class="card-body">
+          <h3>Vegetarian Platter</h3>
+          <p>Vegetables, lentils, grains, and fresh salad.</p>
+          <div class="card-foot"><span class="price">$15.99</span><button onclick="addItem('Vegetarian Platter',15.99)">Add</button></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="image">🥤</div>
+        <div class="card-body">
+          <h3>Fresh Juice</h3>
+          <p>House fruit juice served chilled.</p>
+          <div class="card-foot"><span class="price">$4.25</span><button onclick="addItem('Fresh Juice',4.25)">Add</button></div>
+        </div>
+      </article>
+    </section>
+
+    <aside class="cart-panel">
+      <h2>Your Table Order</h2>
+
+      <div class="field">
+        <label for="table">Table number</label>
+        <input id="table" type="number" min="1" max="99" value="6">
       </div>
 
-      <div class="grid">
-        <article class="card">
-          <div class="image" aria-label="Sample platter image">🍛</div>
-          <div class="card-body">
-            <h3>House Combination</h3>
-            <p>A sample combination plate with entrée choices and fresh sides.</p>
-            <div class="card-foot">
-              <span class="price">$18.99</span>
-              <button type="button" onclick="addItem('House Combination')">Add</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="image" aria-label="Sample grilled dish image">🍗</div>
-          <div class="card-body">
-            <h3>Grilled Chicken Plate</h3>
-            <p>Seasoned grilled chicken served with rice, vegetables, and house sauce.</p>
-            <div class="card-foot">
-              <span class="price">$16.49</span>
-              <button type="button" onclick="addItem('Grilled Chicken Plate')">Add</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="image" aria-label="Sample vegetarian dish image">🥗</div>
-          <div class="card-body">
-            <h3>Vegetarian Platter</h3>
-            <p>A colorful selection of vegetables, lentils, grains, and fresh salad.</p>
-            <div class="card-foot">
-              <span class="price">$15.99</span>
-              <button type="button" onclick="addItem('Vegetarian Platter')">Add</button>
-            </div>
-          </div>
-        </article>
+      <div class="field">
+        <label for="notes">Order notes</label>
+        <textarea id="notes" placeholder="Example: no onions"></textarea>
       </div>
 
-      <div class="notice" id="notice">
-        This generic demo is separate from every restaurant’s live ordering system.
+      <div id="cartItems" class="cart-items">
+        <div class="empty">No items added yet.</div>
       </div>
-    </div>
-  </section>
+
+      <div class="total">
+        <span>Total</span>
+        <span id="total">$0.00</span>
+      </div>
+
+      <button class="send" onclick="sendOrder()">Send Order to Kitchen</button>
+      <div id="message" class="message"></div>
+    </aside>
+  </div>
 </main>
 
-<a class="cart" href="#notice" id="cart">View Cart · 0 items</a>
-
 <script>
-  let itemCount = 0;
+  const CART_KEY = "ev_demo_cart";
+  const ORDERS_KEY = "ev_demo_kitchen_orders";
+  let cart = [];
 
-  function addItem(itemName) {
-    itemCount += 1;
-    document.getElementById("cart").textContent =
-      `View Cart · ${itemCount} item${itemCount === 1 ? "" : "s"}`;
-    document.getElementById("notice").textContent =
-      `${itemName} was added to the demo cart for Table 6.`;
+  function money(value) {
+    return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value);
   }
+
+  function addItem(name, price) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) existing.quantity += 1;
+    else cart.push({ name, price, quantity: 1 });
+    renderCart();
+  }
+
+  function renderCart() {
+    const container = document.getElementById("cartItems");
+    if (!cart.length) {
+      container.innerHTML = '<div class="empty">No items added yet.</div>';
+      document.getElementById("total").textContent = "$0.00";
+      return;
+    }
+
+    container.innerHTML = cart.map(item => `
+      <div class="cart-row">
+        <span>${item.quantity} × ${item.name}</span>
+        <strong>${money(item.price * item.quantity)}</strong>
+      </div>
+    `).join("");
+
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    document.getElementById("total").textContent = money(total);
+  }
+
+  function sendOrder() {
+    const table = Number(document.getElementById("table").value);
+    const notes = document.getElementById("notes").value.trim();
+    const message = document.getElementById("message");
+
+    if (!table || table < 1) {
+      message.className = "message error";
+      message.textContent = "Enter a valid table number.";
+      return;
+    }
+
+    if (!cart.length) {
+      message.className = "message error";
+      message.textContent = "Add at least one item.";
+      return;
+    }
+
+    const orders = JSON.parse(localStorage.getItem(ORDERS_KEY) || "[]");
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    const order = {
+      id: "DINE-" + Date.now(),
+      table,
+      notes,
+      items: cart,
+      total,
+      status: "New",
+      createdAt: new Date().toISOString()
+    };
+
+    orders.unshift(order);
+    localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+
+    message.className = "message success";
+    message.innerHTML = `Order sent to the kitchen for Table ${table}. <a href="/kitchen-demo.html" target="_blank" rel="noopener">Open Kitchen Demo</a>`;
+
+    cart = [];
+    document.getElementById("notes").value = "";
+    renderCart();
+  }
+
+  renderCart();
 </script>
 </body>
 </html>
