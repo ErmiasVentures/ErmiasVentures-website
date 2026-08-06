@@ -5,29 +5,751 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Direct online ordering, dine-in QR ordering, secure payments, and kitchen order display for independent restaurants from Ermias Ventures LLC.">
   <title>Restaurant Online Ordering | Ermias Ventures LLC</title>
+
   <style>
-    :root{--navy:#10243e;--blue:#1f5f99;--blue-dark:#174b79;--gold:#d9a441;--cream:#f7f4ed;--white:#fff;--text:#1d2935;--muted:#627080;--border:#dfe5eb;--success:#1e7a52;--shadow:0 18px 45px rgba(16,36,62,.12)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6}a{color:inherit}.container{width:min(1140px,calc(100% - 32px));margin:0 auto}
-    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}.nav-wrap{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand-mark{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--navy);color:var(--white);font-weight:800;letter-spacing:.5px}.brand-text strong,.brand-text small{display:block}.brand-text strong{color:var(--navy);font-size:16px;letter-spacing:.4px}.brand-text small{color:var(--muted);font-size:11px;letter-spacing:1.2px}.main-nav{display:flex;align-items:center;gap:8px}.main-nav a{text-decoration:none;padding:10px 12px;border-radius:8px;font-weight:700;font-size:14px}.main-nav a:hover{background:#eef4f8}.nav-cta{background:var(--blue);color:var(--white)}.nav-cta:hover{background:var(--blue-dark)!important}
-    .hero{background:radial-gradient(circle at top right,rgba(217,164,65,.22),transparent 32%),linear-gradient(135deg,var(--cream),#eef5fb);padding:88px 0 82px}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;color:var(--blue);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:1.4px}.eyebrow::before{content:"";width:28px;height:3px;border-radius:999px;background:var(--gold)}h1{margin:0;color:var(--navy);font-size:clamp(42px,6vw,70px);line-height:1.05;letter-spacing:-2px}.hero-copy{max-width:690px;margin:24px 0 0;color:var(--muted);font-size:20px}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border:1px solid transparent;border-radius:10px;text-decoration:none;font-weight:800;transition:transform .15s ease,background .15s ease}.button:hover{transform:translateY(-1px)}.button-primary{color:var(--white);background:var(--blue)}.button-primary:hover{background:var(--blue-dark)}.button-secondary{color:var(--navy);background:var(--white);border-color:var(--border)}.hero-note{margin-top:18px;color:var(--muted);font-size:14px}
-    .demo-card{background:var(--white);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.demo-card-top{padding:20px;background:var(--navy);color:var(--white)}.demo-card-top strong{display:block;font-size:18px}.demo-card-top span{color:#cbd8e5;font-size:14px}.demo-screen{padding:22px}.order-row{display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--border)}.order-row:last-child{border-bottom:0}.food-icon{width:54px;height:54px;border-radius:12px;display:grid;place-items:center;background:#f4ead4;font-size:26px}.order-row strong{display:block;color:var(--navy)}.order-row small{color:var(--muted)}.status{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:#e8f6ef;color:var(--success);font-size:12px;font-weight:800}
-    section{padding:78px 0}.section-heading{max-width:760px;margin:0 auto 42px;text-align:center}.section-heading h2{margin:0;color:var(--navy);font-size:clamp(32px,4vw,48px);line-height:1.15}.section-heading p{margin:16px 0 0;color:var(--muted);font-size:18px}.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.feature-card{border:1px solid var(--border);border-radius:16px;padding:26px;background:var(--white)}.feature-number{width:38px;height:38px;display:grid;place-items:center;border-radius:10px;background:#eaf2f8;color:var(--blue);font-weight:900}.feature-card h3{margin:18px 0 8px;color:var(--navy);font-size:20px}.feature-card p{margin:0;color:var(--muted)}
-    .demo-section{background:var(--cream)}.demo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.demo-option{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:18px;padding:28px;background:var(--white);box-shadow:0 10px 26px rgba(16,36,62,.07)}.demo-option h3{margin:0;color:var(--navy);font-size:23px}.demo-option p{flex:1;color:var(--muted)}.demo-link{color:var(--blue);font-weight:800;text-decoration:none}.demo-link:hover{text-decoration:underline}
-    .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.how-step{padding:28px;border-left:4px solid var(--gold);background:#fafbfd;border-radius:0 14px 14px 0}.how-step strong{color:var(--blue);text-transform:uppercase;font-size:12px;letter-spacing:1.2px}.how-step h3{margin:8px 0;color:var(--navy)}.how-step p{margin:0;color:var(--muted)}
-    .cta-section{padding:70px 0;background:var(--navy);color:var(--white)}.cta-card{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.cta-card h2{margin:0;font-size:clamp(30px,4vw,46px);line-height:1.15}.cta-card p{margin:12px 0 0;color:#cbd8e5;font-size:18px}.cta-section .button-primary{background:var(--gold);color:var(--navy)}.site-footer{padding:30px 0;border-top:1px solid var(--border);background:var(--white)}.footer-wrap{display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:14px}.footer-wrap a{color:var(--blue);text-decoration:none;font-weight:700}
-    @media(max-width:900px){.hero-grid,.cta-card{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.demo-grid,.how-grid{grid-template-columns:1fr}.main-nav a:not(.nav-cta){display:none}}@media(max-width:620px){.hero{padding:58px 0}h1{letter-spacing:-1px}.feature-grid{grid-template-columns:1fr}.hero-actions .button,.cta-card .button{width:100%}.footer-wrap{flex-direction:column;align-items:flex-start}}
+    :root {
+      --navy: #10243e;
+      --blue: #1f5f99;
+      --blue-dark: #174b79;
+      --gold: #d9a441;
+      --cream: #f7f4ed;
+      --white: #ffffff;
+      --text: #1d2935;
+      --muted: #627080;
+      --border: #dfe5eb;
+      --success: #1e7a52;
+      --shadow: 0 18px 45px rgba(16, 36, 62, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--navy);
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .brand-text strong,
+    .brand-text small {
+      display: block;
+    }
+
+    .brand-text strong {
+      color: var(--navy);
+      font-size: 16px;
+      letter-spacing: 0.4px;
+    }
+
+    .brand-text small {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1.2px;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .main-nav a:hover {
+      background: #eef4f8;
+    }
+
+    .nav-cta {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-dark) !important;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at top right, rgba(217, 164, 65, 0.22), transparent 32%),
+        linear-gradient(135deg, var(--cream), #eef5fb);
+      padding: 88px 0 82px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .button-primary:hover {
+      background: var(--blue-dark);
+    }
+
+    .button-secondary {
+      color: var(--navy);
+      background: var(--white);
+      border-color: var(--border);
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .demo-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .demo-card-top {
+      padding: 20px;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .demo-card-top strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .demo-card-top span {
+      color: #cbd8e5;
+      font-size: 14px;
+    }
+
+    .demo-screen {
+      padding: 22px;
+    }
+
+    .order-row {
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .order-row:last-child {
+      border-bottom: 0;
+    }
+
+    .food-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: #f4ead4;
+      font-size: 26px;
+    }
+
+    .order-row strong {
+      display: block;
+      color: var(--navy);
+    }
+
+    .order-row small {
+      color: var(--muted);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #e8f6ef;
+      color: var(--success);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.15;
+    }
+
+    .section-heading p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      background: var(--white);
+    }
+
+    .feature-number {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #eaf2f8;
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .feature-card h3 {
+      margin: 18px 0 8px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .demo-section {
+      background: var(--cream);
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .demo-option {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      background: var(--white);
+      box-shadow: 0 10px 26px rgba(16, 36, 62, 0.07);
+    }
+
+    .demo-option h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 23px;
+    }
+
+    .demo-option p {
+      flex: 1;
+      color: var(--muted);
+    }
+
+    .demo-link {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .demo-link:hover {
+      text-decoration: underline;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .how-step {
+      padding: 28px;
+      border-left: 4px solid var(--gold);
+      background: #fafbfd;
+      border-radius: 0 14px 14px 0;
+    }
+
+    .how-step strong {
+      color: var(--blue);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.2px;
+    }
+
+    .how-step h3 {
+      margin: 8px 0;
+      color: var(--navy);
+    }
+
+    .how-step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .cta-section {
+      padding: 70px 0;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .cta-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .cta-card h2 {
+      margin: 0;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.15;
+    }
+
+    .cta-card p {
+      margin: 12px 0 0;
+      color: #cbd8e5;
+      font-size: 18px;
+    }
+
+    .cta-section .button-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-wrap a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cta-card {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .demo-grid,
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main-nav a:not(.nav-cta) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        padding: 58px 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .button,
+      .cta-card .button {
+        width: 100%;
+      }
+
+      .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
 </head>
+
 <body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="/" aria-label="Ermias Ventures home"><span class="brand-mark">EV</span><span class="brand-text"><strong>ERMIAS VENTURES</strong><small>SMART SOLUTIONS</small></span></a><nav class="main-nav" aria-label="Primary navigation"><a href="#features">Features</a><a href="#demos">Demos</a><a href="#how-it-works">How It Works</a><a class="nav-cta" href="/contact.html">Schedule a Demo</a></nav></div></header>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="/" aria-label="Ermias Ventures home">
+      <span class="brand-mark">EV</span>
+      <span class="brand-text">
+        <strong>ERMIAS VENTURES</strong>
+        <small>SMART SOLUTIONS</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="#features">Features</a>
+      <a href="#demos">Demos</a>
+      <a href="#how-it-works">How It Works</a>
+      <a class="nav-cta" href="/contact.html">Schedule a Demo</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Restaurant Technology</p><h1>Direct Online Ordering for Independent Restaurants</h1><p class="hero-copy">Give customers a simple way to order and pay online, let dine-in guests order by QR code, and send every order to a clear kitchen display.</p><div class="hero-actions"><a class="button button-primary" href="#demos">View the Live Demos</a><a class="button button-secondary" href="/contact.html">Schedule a 10-Minute Demo</a></div><p class="hero-note">Built for independent restaurants that want their own branded ordering experience.</p></div><div class="demo-card" aria-label="Kitchen order preview"><div class="demo-card-top"><strong>Kitchen Order Display</strong><span>New paid orders arrive in one clear view.</span></div><div class="demo-screen"><div class="order-row"><span class="food-icon">🍽️</span><span><strong>Order #1048</strong><small>Pickup · 3 items</small></span><span class="status">New</span></div><div class="order-row"><span class="food-icon">📱</span><span><strong>Table 6</strong><small>Dine-in QR order · 2 items</small></span><span class="status">Paid</span></div><div class="order-row"><span class="food-icon">🥡</span><span><strong>Order #1047</strong><small>Pickup · Ready at 7:15 PM</small></span><span class="status">Ready</span></div></div></div></div></section>
-<section id="features"><div class="container"><div class="section-heading"><h2>Everything needed to accept direct orders</h2><p>A complete ordering experience for customers, restaurant staff, and owners.</p></div><div class="feature-grid"><article class="feature-card"><span class="feature-number">1</span><h3>Customer Ordering</h3><p>Customers browse the menu, select options, review their cart, and place an order online.</p></article><article class="feature-card"><span class="feature-number">2</span><h3>Dine-In QR Ordering</h3><p>Guests scan a table QR code and send their order directly to the restaurant.</p></article><article class="feature-card"><span class="feature-number">3</span><h3>Kitchen Display</h3><p>Staff see new orders, customer details, table numbers, order notes, and payment status.</p></article><article class="feature-card"><span class="feature-number">4</span><h3>Secure Payments</h3><p>The restaurant connects its own supported payment account and receives customer payments directly.</p></article></div></div></section>
-<section class="demo-section" id="demos"><div class="container"><div class="section-heading"><h2>Try the restaurant ordering experience</h2><p>See what customers and restaurant staff will use before scheduling a demonstration.</p></div><div class="demo-grid"><article class="demo-option"><h3>Customer Ordering Demo</h3><p>Browse a sample menu, add items to the cart, and see the customer checkout flow.</p><a class="demo-link" href="/demo.html">Open Customer Demo →</a></article><article class="demo-option"><h3>Kitchen Display Demo</h3><p>See how restaurant staff can receive, review, and manage incoming orders.</p><a class="demo-link" href="/kitchen.html">Open Kitchen Demo →</a></article><article class="demo-option"><h3>Dine-In Ordering</h3><p>See how table-specific QR ordering can make dine-in service faster and easier.</p><a class="demo-link" href="/contact.html">Request Dine-In Demo →</a></article></div></div></section>
-<section id="how-it-works"><div class="container"><div class="section-heading"><h2>How setup works</h2><p>Ermias Ventures configures the ordering experience around the restaurant’s menu and workflow.</p></div><div class="how-grid"><article class="how-step"><strong>Step 1</strong><h3>Review the restaurant</h3><p>We review the menu, order types, business hours, payment provider, and kitchen workflow.</p></article><article class="how-step"><strong>Step 2</strong><h3>Build and connect</h3><p>We prepare the branded ordering page, kitchen display, dine-in QR links, and payment connection.</p></article><article class="how-step"><strong>Step 3</strong><h3>Test and launch</h3><p>The restaurant tests orders and payments before the system is shared with customers.</p></article></div></div></section>
-<section class="cta-section"><div class="container cta-card"><div><h2>See how direct ordering could work for your restaurant</h2><p>Schedule a brief demonstration with Ermias Ventures.</p></div><a class="button button-primary" href="/contact.html">Schedule a Demo</a></div></section>
+
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <p class="eyebrow">Restaurant Technology</p>
+
+        <h1>Direct Online Ordering for Independent Restaurants</h1>
+
+        <p class="hero-copy">
+          Give customers a simple way to order and pay online, let dine-in guests
+          order by QR code, and send every order to a clear kitchen display.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#demos">View the Live Demos</a>
+          <a class="button button-secondary" href="/contact.html">Schedule a 10-Minute Demo</a>
+        </div>
+
+        <p class="hero-note">
+          Built for independent restaurants that want their own branded ordering experience.
+        </p>
+      </div>
+
+      <div class="demo-card" aria-label="Kitchen order preview">
+        <div class="demo-card-top">
+          <strong>Kitchen Order Display</strong>
+          <span>New paid orders arrive in one clear view.</span>
+        </div>
+
+        <div class="demo-screen">
+          <div class="order-row">
+            <span class="food-icon">🍽️</span>
+            <span>
+              <strong>Order #1048</strong>
+              <small>Pickup · 3 items</small>
+            </span>
+            <span class="status">New</span>
+          </div>
+
+          <div class="order-row">
+            <span class="food-icon">📱</span>
+            <span>
+              <strong>Table 6</strong>
+              <small>Dine-in QR order · 2 items</small>
+            </span>
+            <span class="status">Paid</span>
+          </div>
+
+          <div class="order-row">
+            <span class="food-icon">🥡</span>
+            <span>
+              <strong>Order #1047</strong>
+              <small>Pickup · Ready at 7:15 PM</small>
+            </span>
+            <span class="status">Ready</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Everything needed to accept direct orders</h2>
+        <p>
+          A complete ordering experience for customers, restaurant staff, and owners.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <span class="feature-number">1</span>
+          <h3>Customer Ordering</h3>
+          <p>Customers browse the menu, select options, review their cart, and place an order online.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-number">2</span>
+          <h3>Dine-In QR Ordering</h3>
+          <p>Guests scan a table QR code and send their order directly to the restaurant.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-number">3</span>
+          <h3>Kitchen Display</h3>
+          <p>Staff see new orders, customer details, table numbers, order notes, and payment status.</p>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-number">4</span>
+          <h3>Secure Payments</h3>
+          <p>The restaurant connects its own supported payment account and receives customer payments directly.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section" id="demos">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Try the restaurant ordering experience</h2>
+        <p>
+          See what customers and restaurant staff will use before scheduling a demonstration.
+        </p>
+      </div>
+
+      <div class="demo-grid">
+
+        <article class="demo-option">
+          <h3>Customer Ordering Demo</h3>
+          <p>
+            Browse a sample menu, add items to the cart, and see the customer checkout flow.
+          </p>
+          <a class="demo-link" href="/demo.html">Open Customer Demo →</a>
+        </article>
+
+        <article class="demo-option">
+          <h3>Kitchen Display Demo</h3>
+          <p>
+            See how restaurant staff can receive, review, and manage incoming orders.
+          </p>
+          <a class="demo-link" href="/kitchen.html">Open Kitchen Demo →</a>
+        </article>
+
+        <article class="demo-option">
+          <h3>Dine-In Ordering</h3>
+          <p>
+            See how table-specific QR ordering can make dine-in service faster and easier.
+          </p>
+          <a
+            class="demo-link"
+            href="https://script.google.com/macros/s/AKfycby6u8wDjzhqvmgfURubwPJv5lalM1fhq7_kNgevU5ANyi4JA5jIgLm4sIM468YGO31CZA/exec?page=dinein"
+            target="_blank"
+            rel="noopener"
+          >
+            Open Dine-In Demo →
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>How setup works</h2>
+        <p>
+          Ermias Ventures configures the ordering experience around the restaurant’s menu and workflow.
+        </p>
+      </div>
+
+      <div class="how-grid">
+
+        <article class="how-step">
+          <strong>Step 1</strong>
+          <h3>Review the restaurant</h3>
+          <p>We review the menu, order types, business hours, payment provider, and kitchen workflow.</p>
+        </article>
+
+        <article class="how-step">
+          <strong>Step 2</strong>
+          <h3>Build and connect</h3>
+          <p>We prepare the branded ordering page, kitchen display, dine-in QR links, and payment connection.</p>
+        </article>
+
+        <article class="how-step">
+          <strong>Step 3</strong>
+          <h3>Test and launch</h3>
+          <p>The restaurant tests orders and payments before the system is shared with customers.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-card">
+
+      <div>
+        <h2>See how direct ordering could work for your restaurant</h2>
+        <p>
+          Schedule a brief demonstration with Ermias Ventures.
+        </p>
+      </div>
+
+      <a class="button button-primary" href="/contact.html">Schedule a Demo</a>
+
+    </div>
+  </section>
+
 </main>
-<footer class="site-footer"><div class="container footer-wrap"><span>© <span id="year"></span> Ermias Ventures LLC. All rights reserved.</span><a href="/contact.html">Contact Ermias Ventures</a></div></footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+
+<footer class="site-footer">
+  <div class="container footer-wrap">
+    <span>© <span id="year"></span> Ermias Ventures LLC. All rights reserved.</span>
+    <a href="/contact.html">Contact Ermias Ventures</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
