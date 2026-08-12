@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Supply | Ermias Ventures LLC</title>
+
+  <meta name="description"
+        content="Ermias Ventures LLC provides business and government sourcing for workplace supplies, packaging materials, safety products, hardware, janitorial items, and other operational goods.">
+
+  <style>
+    :root{
+      --navy:#0b1f3a;
+      --navy2:#102a4d;
+      --gold:#f0b936;
+      --gold2:#ffd76a;
+      --white:#ffffff;
+      --light:#f5f7fb;
+      --text:#162033;
+      --muted:#667085;
+      --border:#dfe5ee;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    .container{
+      width:min(1120px,92%);
+      margin:auto;
+    }
+
+    header{
+      background:var(--navy);
+      color:white;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .nav-wrap{
+      min-height:86px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:white;
+      text-decoration:none;
+    }
+
+    .brand-mark{
+      width:56px;
+      height:56px;
+      border-radius:15px;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:var(--navy);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      font-size:22px;
+      box-shadow:0 8px 24px rgba(240,185,54,.2);
+    }
+
+    .brand-text strong{
+      display:block;
+      font-size:18px;
+      letter-spacing:.08em;
+    }
+
+    .brand-text small{
+      display:block;
+      color:#c7d2e4;
+      letter-spacing:.2em;
+      margin-top:2px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:22px;
+      font-weight:600;
+      font-size:15px;
+    }
+
+    nav a:hover{
+      color:var(--gold);
+    }
+
+    .hero{
+      background:
+        radial-gradient(circle at 80% 20%, rgba(240,185,54,.12), transparent 28%),
+        linear-gradient(135deg,var(--navy),var(--navy2));
+      color:white;
+      padding:90px 0 80px;
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-weight:800;
+      letter-spacing:.18em;
+      font-size:14px;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,7vw,72px);
+      line-height:1.02;
+      max-width:850px;
+      margin:0 0 24px;
+    }
+
+    .hero p{
+      max-width:760px;
+      font-size:20px;
+      color:#d8e1ee;
+      margin:0 0 30px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:15px 24px;
+      border-radius:10px;
+      font-weight:800;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:var(--navy);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.35);
+      color:white;
+    }
+
+    section{
+      padding:72px 0;
+    }
+
+    .section-light{
+      background:var(--light);
+    }
+
+    h2{
+      font-size:34px;
+      margin:0 0 14px;
+      color:var(--navy);
+    }
+
+    .section-intro{
+      color:var(--muted);
+      max-width:800px;
+      margin-bottom:34px;
+      font-size:17px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:25px;
+      box-shadow:0 8px 24px rgba(15,35,65,.05);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:20px;
+    }
+
+    .card p{
+      color:var(--muted);
+      margin:0;
+    }
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .step{
+      background:white;
+      border-radius:14px;
+      padding:24px;
+      border-top:4px solid var(--gold);
+      box-shadow:0 8px 24px rgba(15,35,65,.06);
+    }
+
+    .step-number{
+      font-size:14px;
+      font-weight:800;
+      color:var(--gold);
+      letter-spacing:.1em;
+      margin-bottom:8px;
+    }
+
+    .step h3{
+      margin:0 0 8px;
+      color:var(--navy);
+    }
+
+    .step p{
+      color:var(--muted);
+      margin:0;
+    }
+
+    .capability{
+      background:var(--navy);
+      color:white;
+      border-radius:18px;
+      padding:38px;
+    }
+
+    .capability h2{
+      color:white;
+    }
+
+    .capability p{
+      color:#d6dfeb;
+      max-width:850px;
+    }
+
+    .capability ul{
+      columns:2;
+      padding-left:20px;
+      color:#e8edf5;
+    }
+
+    .capability li{
+      margin-bottom:8px;
+    }
+
+    .cta{
+      text-align:center;
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      color:white;
+    }
+
+    .cta h2{
+      color:white;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:0 auto 26px;
+      color:#d6dfeb;
+      font-size:17px;
+    }
+
+    footer{
+      background:#061426;
+      color:#9fb0c8;
+      text-align:center;
+      padding:26px 0;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .process{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:650px){
+      nav{
+        display:none;
+      }
+
+      .nav-wrap{
+        min-height:76px;
+      }
+
+      .hero{
+        padding:65px 0;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .grid,
+      .process{
+        grid-template-columns:1fr;
+      }
+
+      .capability ul{
+        columns:1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a class="brand" href="/">
+      <div class="brand-mark">EV</div>
+      <div class="brand-text">
+        <strong>ERMIAS VENTURES</strong>
+        <small>SMART SOLUTIONS</small>
+      </div>
+    </a>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#services">Services</a>
+      <a href="/supply">Supply</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="container">
+
+    <div class="eyebrow">BUSINESS & GOVERNMENT SUPPLY</div>
+
+    <h1>Reliable Sourcing for Everyday Operational Needs</h1>
+
+    <p>
+      Ermias Ventures LLC helps businesses, municipalities, public agencies,
+      manufacturers, facilities, and other organizations source commonly used
+      operational supplies and requested goods.
+    </p>
+
+    <div class="buttons">
+      <a class="btn btn-primary"
+         href="mailto:ermias@ermiasventures.com?subject=Supply Quote Request">
+        Request a Quote
+      </a>
+
+      <a class="btn btn-secondary" href="#products">
+        View Supply Categories
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="products">
+  <div class="container">
+
+    <h2>Supply Categories</h2>
+
+    <p class="section-intro">
+      We source products based on your specifications, quantity, delivery
+      requirements, and availability. Contact us for items not listed below.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Workplace Consumables</h3>
+        <p>
+          Disposable gloves, shop supplies, trash liners, paper products,
+          and frequently used operational items.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Packaging & Shipping</h3>
+        <p>
+          Stretch film, tape, labels, packaging materials, shipping supplies,
+          and related accessories.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Janitorial Supplies</h3>
+        <p>
+          Cleaning products, facility consumables, liners, paper goods,
+          and general janitorial supplies.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Safety Products</h3>
+        <p>
+          Safety glasses, protective products, worksite supplies,
+          and general workplace safety items.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Hardware & Maintenance</h3>
+        <p>
+          General hardware, fasteners, replacement items, maintenance products,
+          and operational accessories.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Special Sourcing Requests</h3>
+        <p>
+          Send us the requested manufacturer, part number, specifications,
+          quantity, or equivalent-product requirements.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section-light">
+  <div class="container">
+
+    <h2>How Our Supply Process Works</h2>
+
+    <p class="section-intro">
+      Our goal is to make sourcing straightforward for purchasing departments,
+      facilities, businesses, and public agencies.
+    </p>
+
+    <div class="process">
+
+      <div class="step">
+        <div class="step-number">STEP 01</div>
+        <h3>Send Your Requirement</h3>
+        <p>
+          Provide the product description, specifications, quantity,
+          and requested delivery date.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 02</div>
+        <h3>We Source</h3>
+        <p>
+          We review qualified sourcing options that meet the requested
+          requirements.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 03</div>
+        <h3>Receive a Quote</h3>
+        <p>
+          We provide pricing, availability, and applicable delivery information.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">STEP 04</div>
+        <h3>Order & Delivery</h3>
+        <p>
+          Approved orders are processed and coordinated according to the
+          agreed purchase terms.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+
+    <div class="capability">
+
+      <h2>Serving Public & Private Organizations</h2>
+
+      <p>
+        Ermias Ventures LLC is expanding its supplier capabilities to support
+        organizations that need responsive product sourcing and straightforward
+        purchasing support.
+      </p>
+
+      <ul>
+        <li>Municipalities and public agencies</li>
+        <li>Commercial businesses</li>
+        <li>Manufacturers and warehouses</li>
+        <li>Facilities and property operations</li>
+        <li>Schools and institutional buyers</li>
+        <li>Small and midsize organizations</li>
+      </ul>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="cta">
+  <div class="container">
+
+    <h2>Need Pricing on a Product?</h2>
+
+    <p>
+      Send us the product description, manufacturer or part number when available,
+      quantity, specifications, and requested delivery date. We will review the
+      request and respond with available sourcing options.
+    </p>
+
+    <a class="btn btn-primary"
+       href="mailto:ermias@ermiasventures.com?subject=Supply Quote Request">
+      Request a Supply Quote
+    </a>
+
+  </div>
+</section>
+
+
+<footer>
+  © 2026 Ermias Ventures LLC · Columbus, Ohio
+</footer>
+
+</body>
+</html>
